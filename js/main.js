@@ -49,3 +49,19 @@ function recorrerDiasAgregados() {
 }
 // carga de dias 
 let cargarDia = true;
+while (cargarDia) {
+    // defino los valores del día
+    let id_dia = dias.length + 1;
+    let nombre_dia = prompt("Ingrese día trabajado");
+    let valor_hora = parseFloat(prompt("Ingrese valor de la hora trabajada"));
+    let horas_trabajadas = parseFloat(prompt("Ingrese número de horas trabajadas"));
+    let precio_dia = horas_trabajadas * valor_hora;
+    // creo mi Dia
+    let dia = new Dia(id_dia, nombre_dia, precio_dia);
+    console.log(dia);
+    // agrego mi Dia al array dias
+    dias.push(dia);
+    console.log(dias);
+    // preguntar si desea continuar agregando días
+    cargarDia = confirm("¿Desea agregar otro día trabajado?");
+}
