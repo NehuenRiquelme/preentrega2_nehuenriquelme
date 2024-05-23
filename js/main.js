@@ -47,3 +47,5 @@ function recorrerDiasAgregados() {
 
     return contenido_dias;
 }
+// carga de dias 
+let cargarDia = true;
