@@ -65,3 +65,6 @@ while (cargarDia) {
     // preguntar si desea continuar agregando días
     cargarDia = confirm("¿Desea agregar otro día trabajado?");
 }
+// carga de dias agregados
+cargarDia = true;
+
