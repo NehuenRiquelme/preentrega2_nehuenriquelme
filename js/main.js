@@ -105,3 +105,17 @@ while (cargarDia) {
     //pregunta si desea eliminar otro día
     cargarDia = confirm("¿Desea eliminar otro día?");
 }
+// imprimo el total de dias a sumar
+let suma_total = 0;
+let contenido_dias = "";
+
+for (let di of dias_agregados) {
+    // nueva instancia de clase dia
+    let dia = new Dia (di.id, di.nombre, di.precio);
+    dia.quitarIVA(); // se aplican descuentos legales
+    contenido_dias += dia.id + ".- " + dia.nombre + " $" + dia.precio + "\n";
+    suma_total += dia.precio;
+}
+
+// total a pagar
+alert("Pago por día con los descuentos legales:\n\n" + contenido_dias + "\n\nRecibirás un sueldo liquido de: $" + suma_total);
