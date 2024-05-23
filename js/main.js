@@ -68,3 +68,40 @@ while (cargarDia) {
 // carga de dias agregados
 cargarDia = true;
 
+while (cargarDia) {
+    let contenido_dias = recorrerDias();
+
+    //indica el id del día
+    let id_dia = parseInt(prompt("Seleccione el dia que desea sumar:\n" + contenido_dias));
+    //buscar el dia
+    let dia = buscarDia(id_dia);
+    //verificar si el día seleccionado es valido
+    if (dia != null) {
+        //agregar el día seleccionado para sumarlo
+        agregarDia(dia);
+    } else {
+        alert("Número no válido, intente nuevamente");
+    }
+    console.log(dia);
+    //pregunta si desea continuar sumando días
+    cargarDia = confirm("¿Desea sumar más días?");
+}
+// eliminar dias
+cargarDia = true;
+
+while (cargarDia) {
+    let contenido_dias = recorrerDiasAgregados();
+    //indica el id del día
+    let id_dia = parseInt(prompt("Vas a sumar estos días, inserta un número si deseas eliminarlo: (0 - Salir)\n" + contenido_dias));
+    if(id_dia >= 0) { // si el numero ingresado es mayor a 0 (1, 2, 3) se elimina ese dia
+       eliminarDia(id_dia);
+    } else { // si el número ingresado no es mayor a 0
+        alert("Número no válido, intente nuevamente");
+    }
+    if(id_dia === 0) {
+        break;
+    }
+    
+    //pregunta si desea eliminar otro día
+    cargarDia = confirm("¿Desea eliminar otro día?");
+}
